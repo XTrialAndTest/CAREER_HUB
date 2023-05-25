@@ -17,7 +17,7 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from decouple import config
+# from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'CareerHub_Project.wsgi.application'
 # Render Configuration
 
 DATABASES = {
-    'default': dj_database_url.parse(config('postgres://calories_counter_user:DWuf3BW7lKUHyZmJKF6TLV1VKN1xmakH@dpg-chd0vu67avjcvo3i1bd0-a.oregon-postgres.render.com/calories_counter'))
+    'default': dj_database_url.parse('postgres://calories_counter_user:DWuf3BW7lKUHyZmJKF6TLV1VKN1xmakH@dpg-chd0vu67avjcvo3i1bd0-a.oregon-postgres.render.com/calories_counter')
 
 
 }
@@ -154,10 +154,9 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Clouddinary Configuration 
-cloudinary.config(
-    cloud_name=dby2kjiuf,
-    api_key=729261643213325,
-    api_secret=fyUqTyHrbn-GQN4-O2IcE_4S1Wg,
-    secure=True
-)
-
+# Configuration 
+cloudinary.config({
+  cloud_name: "dby2kjiuf",
+  api_key: "729261643213325",
+  api_secret: "fyUqTyHrbn-GQN4-O2IcE_4S1Wg"
+});
