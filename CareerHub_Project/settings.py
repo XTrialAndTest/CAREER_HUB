@@ -155,8 +155,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Clouddinary Configuration 
 # Configuration 
-cloudinary.config({
-  "cloud_name": "dby2kjiuf",
- "api_key": "729261643213325",
- "api_secret": "fyUqTyHrbn-GQN4-O2IcE_4S1Wg"
-});
+
+cloudinary.config(
+  cloud_name = "dby2kjiuf",
+  api_key = "729261643213325",
+  api_secret = "fyUqTyHrbn-GQN4-O2IcE_4S1Wg",
+  secure = true
+)
