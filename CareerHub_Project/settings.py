@@ -98,11 +98,11 @@ WSGI_APPLICATION = 'CareerHub_Project.wsgi.application'
 # Life DataBase from Render 
 # Render Configuration
 
-DATABASES = {
-    'default': dj_database_url.parse('postgres://calories_counter_user:DWuf3BW7lKUHyZmJKF6TLV1VKN1xmakH@dpg-chd0vu67avjcvo3i1bd0-a.oregon-postgres.render.com/calories_counter')
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://calories_counter_user:DWuf3BW7lKUHyZmJKF6TLV1VKN1xmakH@dpg-chd0vu67avjcvo3i1bd0-a.oregon-postgres.render.com/calories_counter')
 
 
-}
+# }
 DATABASES = {
     'default': dj_database_url.parse(config('POST_KEY'))
 
