@@ -17,7 +17,7 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-# from decouple import config
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 
-SECRET_KEY ='django-insecure-ru_a!hiecj5j%*=&76is5oti09u23&0!xc#r(kvy6)9ca4)290'
+# SECRET_KEY ='django-insecure-ru_a!hiecj5j%*=&76is5oti09u23&0!xc#r(kvy6)9ca4)290'
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -102,6 +103,11 @@ DATABASES = {
 
 
 }
+DATABASES = {
+    'default': dj_database_url.parse(config('POST_KEY'))
+
+
+}
 
 
 
@@ -156,9 +162,15 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Clouddinary Configuration 
 # Configuration 
 
+# cloudinary.config(
+#   cloud_name = "dby2kjiuf",
+#   api_key = "729261643213325",
+#   api_secret = "fyUqTyHrbn-GQN4-O2IcE_4S1Wg",
+#   secure = True
+# )
 cloudinary.config(
-  cloud_name = "dby2kjiuf",
-  api_key = "729261643213325",
-  api_secret = "fyUqTyHrbn-GQN4-O2IcE_4S1Wg",
-  secure = True
+  cloud_name = config('CLOUDINARY_NAME'),
+  api_key = config('CLOUDINARY_API') ,
+  api_secret =config('CLOUDINARY_SECRET_KEY') ,
+  secure = config('CD_SECURE')
 )
